@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:upgradx_assignment/carousel.dart';
 
@@ -48,18 +49,200 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: Drawer(
           child: ListView(padding: EdgeInsets.zero, children: [
-        const DrawerHeader(
+        DrawerHeader(
           decoration: BoxDecoration(
-            color: Color(0xFFF7F9F8),
+            color: Color(0xFFEF395B),
           ),
-          child: Text('App For Upgradx Internship'),
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.account_box,
+                  color: Colors.white,
+                  size: 100,
+                ),
+                RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Log In',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => print('click'),
+                      ),
+                      TextSpan(
+                        text: ' . ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Sign Up',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => print('click'),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
-        ListTile(
-            title: const Text('Upgradx Assignment'),
-            onTap: () => Navigator.pop(context)),
-        ListTile(
-            title: const Text('Upgradx Assignment by Aditya Pandia'),
-            onTap: () => Navigator.pop(context))
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                    width:8.0, height:25.0,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width:8.0, height:8.0,
+                    ),
+                    Icon(
+                      Icons.category_outlined,
+                    ),
+                    SizedBox(
+                      width:8.0, height:8.0,
+                    ),
+                    RichText(text: TextSpan(
+                      text: 'Shop by Categories',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => print('click'),
+                    ),
+                    ),
+
+                  ],
+                ),
+                SizedBox(
+                   height:24.0,
+                ),
+                Divider(
+                  color: Colors.black26,
+                ),
+                SizedBox(
+                  width:8.0, height:25.0,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width:8.0, height:8.0,
+                    ),
+                    Icon(
+                      Icons.shopping_cart_checkout_rounded
+                    ),
+                    SizedBox(
+                      width:8.0, height:8.0,
+                    ),
+                    RichText(text: TextSpan(
+                      text: 'Orders',
+                      style: TextStyle(
+                        color: Colors.black,
+
+                        fontSize: 18,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => print('click'),
+                    ),
+                    ),
+
+                  ],
+                ),
+                SizedBox(
+                  height:24.0,
+                ),
+                Divider(
+                  color: Colors.black26,
+                ),
+                SizedBox(
+                  width:8.0, height:25.0,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width:45.0, height:8.0,
+                    ),
+
+
+                    RichText(text: TextSpan(
+                      text: 'FAQs',
+                      style: TextStyle(
+                        color: Colors.black,
+
+                        fontSize: 14,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => print('click'),
+                    ),
+                    ),
+
+                  ],
+                ),
+                SizedBox(
+                  width:8.0, height:25.0,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width:45.0, height:8.0,
+                    ),
+
+
+                    RichText(text: TextSpan(
+                      text: 'CONTACT US',
+                      style: TextStyle(
+                        color: Colors.black,
+
+                        fontSize: 14,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => print('click'),
+                    ),
+                    ),
+
+                  ],
+                ),
+                SizedBox(
+                  width:8.0, height:25.0,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width:45.0, height:8.0,
+                    ),
+
+
+                    RichText(text: TextSpan(
+                      text: 'LEGAL',
+                      style: TextStyle(
+                        color: Colors.black,
+
+                        fontSize: 14,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => print('click'),
+                    ),
+                    ),
+
+                  ],
+                ),
+              ],
+
+            ),
       ])),
       body: SafeArea(
         child: Column(
@@ -145,4 +328,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
